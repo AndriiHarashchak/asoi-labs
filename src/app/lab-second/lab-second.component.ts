@@ -18,8 +18,8 @@ export class LabSecondComponent implements OnInit {
   columns: Column[] = [
     {type: 'number', label: "X1"},
     {type: 'number', label: "Chart"},
-    {type: 'number', label: "Min Point Fibonacci"},
-    {type: 'number', label: "Min Point Golden"},
+    {type: 'number', label: "Фібоначчі"},
+    {type: 'number', label: "Золотий перетин"},
     // {type: 'number', label: "Group A"},
     // {type: 'number', label: "Group B"},
     // "X1", "Divider", "Group A", "Group B"
@@ -41,9 +41,9 @@ export class LabSecondComponent implements OnInit {
   }
 
 
-  e: number=0;
-  start: number=0;
-  end: number=0;
+  e: number=0.7*Math.pow(10, -5);
+  start: number=-5;
+  end: number=5;
   fibonacciResult: [number, number]=[0,0];
   goldenResult: [number, number]=[0,0];
   iterationsFibonacci: number=0;

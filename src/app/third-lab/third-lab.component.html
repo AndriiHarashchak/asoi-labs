@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <h2>Багатомірна оптимізація</h2>
+      <div class="form-group">
+        <label for="start">X1</label>
+        <input type="number" class="form-control" id="start" title="Start" [(ngModel)]="start" required>
+        <label for="End">X2</label>
+        <input type="number" class="form-control" id="End" title="End" [(ngModel)]="end">
+        <label for="Diff">Initial Alpha</label>
+        <input type="number" class="form-control" id="Diff" title="End" [(ngModel)]="alpha">
+
+        <button type="button" class="btn btn-secondary" (click)="MinimizeFunction()">Мінімізація різний крок</button>
+        <button type="button" class="btn btn-secondary" (click)="MinimizeFunctionMethod2()">Мінімізація стабільний
+          крок</button>
+        <button type="button" class="btn btn-secondary" (click)="MinimizeFunctionmaxSpeed()">Мімізація найшвидший
+          спуск</button>
+        <button type="button" class="btn btn-secondary" (click)="MinimizeFunctionNewton()">Мімізація Ньютон</button>
+        <button type="button" class="btn btn-secondary" (click)="functionValue()">Значення функції</button>
+
+        <p>Результат мінізімації {{x1 | number: '1.1-3'}}, {{x2 | number: '1.1-3'}}, y {{y | number:
+          '1.1-3'}}</p>
+        <p>Кількість ітерації {{iterationsCount | number: '1.1-3'}}</p>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <google-chart [title]="'Groups dividing'" [type]="chartType" [options]="chartOptions" [data]="data"
+          [columns]="columns" [width]="700" [height]="300">
+        </google-chart>
+      </div>
+    </div>
+
+  </div>

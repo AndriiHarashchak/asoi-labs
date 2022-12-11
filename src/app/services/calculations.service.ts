@@ -67,11 +67,6 @@ export class CalculationsService {
     let sum1 = 1, sum2 = 0;
 
     for (let i = 1; i < n; i++) {
-      // if (i == 0 || i == 1) {
-      //   //sum += 1;
-      //   sum1 = 1;
-      //   sum2 = 1;
-      // }
       fn = sum1 + sum2;
       sum2 = sum1;
       sum1 = fn;
