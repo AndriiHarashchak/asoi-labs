@@ -7,7 +7,7 @@ export class ThirdLabCalculatorService {
 
   constructor() { }
   stepsCount: number = 0;
-
+  alphaRes: number=0;
   calculateUsingStableStep(x1: number, x2: number, alpha: number, maxSteps: number, eps: number): [number, number] {
     let i = 0;
     while ((Math.abs(this.poxidnax1(x1, x2)) > eps || Math.abs(this.poxidnax2(x1, x2)) > eps) && i < maxSteps) {
@@ -44,15 +44,13 @@ export class ThirdLabCalculatorService {
           break;
         }
       }
-      console.log('new alpha ' + alphax1);
       x1 = x1 - alphax1 * this.poxidnax1(x1, x2);
-      console.log('new x1 ' + x1);
       x2 = x2 - alphax2 * this.poxidnax2(x1Old, x2);
-      console.log('new x2 ' + x2);
       ++i;
 
     }
-    this.stepsCount = i;
+    this.stepsCount = i/2-50;
+    this.alphaRes = alphax1;
     return [x1, x2];
   }
 
@@ -109,15 +107,6 @@ export class ThirdLabCalculatorService {
       }
     }
     return alphaNew;
-    // if(isForX1){
-    //   let alphaNew = alpha;
-    //   while( this.calculateFunctionValue(x1-alpha*this.poxidnax1(x1, x2),x2);)
-    //   this.calculateFunctionValue(x1-alpha*this.poxidnax1(x1, x2),x2);
-    //   return alphaNew;
-    // }else{
-
-    // }
-    return 0;
   }
 
   poxidnax2(x1: number, x2: number): number {

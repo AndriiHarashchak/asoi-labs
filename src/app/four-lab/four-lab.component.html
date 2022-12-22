@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-sm-12">
+            <button type="button" class="btn btn-secondary" (click)="useFunc()">Робота АЧХ</button>
+            <p>fc`: {{serviceNew.fc}}</p>
+            <!-- <p>wc: {{service.wc}}</p> -->
+            <p>N: {{serviceNew.N}}</p>
+            <!-- <p>alha {{serviceNew.alpha}}</p> -->
+            <p *ngFor="let item of coefs; let i=index">
+              h({{i}}): {{item}}</p>
+        </div>
+        <div class="col-md-9 col-sm-12">
+            <google-chart [title]="'Вхід та вихід фільтра'" [type]="chartType" [options]="chartOptions" [data]="data"
+                [columns]="columns" [width]="1000" [height]="600">
+            </google-chart>
+            <google-chart [title]="'АЧХ'" [type]="chartType" [options]="chartOptions2" [data]="data1"
+                [columns]="columns2" [width]="1000" [height]="600">
+            </google-chart>
+            <google-chart [title]="'Вхід Фільтра'" [type]="chartType" [options]="chartOptions3" [data]="data3"
+                [columns]="columns3" [width]="1000" [height]="600">
+            </google-chart>
+            <google-chart [title]="'Вихід Фільтра'" [type]="chartType" [options]="chartOptions4" [data]="data2"
+                [columns]="columns4" [width]="1000" [height]="600">
+            </google-chart>
+            <google-chart [title]="'Шуми Фільтра'" [type]="chartType" [options]="chartOptions5" [data]="data4"
+                [columns]="columns5" [width]="1000" [height]="600">
+            </google-chart>
+            <google-chart [title]="'Імпульсна характеристика Фільтра'" [type]="chartType2" [options]="chartOptions6" [data]="data5"
+                [columns]="columns6" [width]="1000" [height]="600">
+            </google-chart>
+        </div>
+    </div>
